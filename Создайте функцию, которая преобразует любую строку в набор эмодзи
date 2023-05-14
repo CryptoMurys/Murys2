@@ -1,0 +1,14 @@
+# Создайте функцию, которая преобразует любую строку в набор эмодзи
+import emoji
+
+def emojify(text):
+    words = text.split()
+    emojified_words = []
+    for word in words:
+        emojified_word = ''
+        for char in word:
+            emojified_word += emoji.emojize(f':{char}:', use_aliases=True)
+        emojified_words.append(emojified_word)
+    return ' '.join(emojified_words)
+
+print(emojify('Hello World!'))
